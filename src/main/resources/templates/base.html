@@ -34,12 +34,23 @@
             </li>
         </ul>
         <ul class="navbar-nav my-2 my-lg-0">
+            {{^loginedUser}}
             <li class="nav-item">
-                <a class="nav-link" href="/users/create">회원가입</a>
+                <a class="nav-link" href="/users/form">회원가입</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/users/login">Login</a>
+                <a class="nav-link" href="/login">Login</a>
             </li>
+            {{/loginedUser}}
+
+            {{#loginedUser}}
+            <li class="nav-item">
+                <a class="nav-link" href="/users/form">개인정보수정</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/loginout">Logout</a>
+            </li>
+            {{/loginedUser}}
         </ul>
     </div>
 </nav>

@@ -1,4 +1,4 @@
-package com.example.todolist.web;
+package com.example.todolist.web.login;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
