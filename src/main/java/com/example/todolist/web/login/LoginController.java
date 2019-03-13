@@ -30,7 +30,10 @@ public class LoginController {
         KakaoRestApi kakaoRestApi = new KakaoRestApi();
         JsonNode node = kakaoRestApi.getAccessToken(code);
         String token = node.get("access_token").toString();
-        session.setAttribute("token", token);
+        session.setAttribute(HttpSessionUtils.USER_SESSION_USER, token);
+
+        kakaoRestApi.getUserInfo(token);
+        kakaoRestApi.sendMessage(token);
         return "/index";
     }
 
@@ -46,10 +49,23 @@ public class LoginController {
             User user = userService.login(email, password);
             session.setAttribute(HttpSessionUtils.USER_SESSION_USER, user);
             logger.debug("### loginSuccess : {}", user.toString());
+
             return "redirect:/";
         } catch (UnAuthenticationException e) {
-            logger.debug("### loginError : {}", e.getStackTrace());
             return "/user/login_fail";
         }
+    }
+
+
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        KakaoRestApi kakaoRestApi = new KakaoRestApi();
+        String access_token = (String)session.getAttribute(HttpSessionUtils.USER_SESSION_USER);
+        kakaoRestApi.logout(access_token);
+
+
+        session.removeAttribute(HttpSessionUtils.USER_SESSION_USER);
+        return "redirect:/";
     }
 }

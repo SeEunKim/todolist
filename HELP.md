@@ -8,3 +8,4 @@ The following guides illustrates how to use certain features concretely:
 * [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
 * [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
 
+https://bootswatch.com/lux/?optionsRadios=option1

@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="/css/_variables.scss">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+
 </head>
 {{/block}}
 <body>
@@ -21,7 +24,7 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Features</a>
@@ -48,7 +51,7 @@
                 <a class="nav-link" href="/users/form">개인정보수정</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/loginout">Logout</a>
+                <a class="nav-link" href="/logout">Logout</a>
             </li>
             {{/loginedUser}}
         </ul>
@@ -58,5 +61,6 @@
 
 {{#block "content"}}
 {{/block}}
+
 
 </body>

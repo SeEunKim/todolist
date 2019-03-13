@@ -1,0 +1,33 @@
+{{#partial "content"}}
+<div class="container">
+    <div class="jumbotron">
+        <form name="login" method="post" action="/login">
+            <fieldset>
+                <legend>로그인</legend>
+                <table class="table table-hover">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="row">이메일 주소와 비밀번호가 틀립니다. 다시 입력해주세요.</th>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="https://kauth.kakao.com/oauth/authorize?client_id=9c6c046b932d7910776ca22b31d9b3bb&redirect_uri=http://localhost:8080/kakao_oauth&response_type=code">
+                    <img src="/css/images/kakao_account_login_btn_medium_wide.png">
+                </a>
+            </fieldset>
+        </form>
+    </div>
+</div>
+{{/partial}}
+{{>base}}
